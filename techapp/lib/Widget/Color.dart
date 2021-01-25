@@ -6,3 +6,4 @@ Color rotateColor = Color(0xFF4962B6);
 
 Color appBarColorYellow = Color(0xFF28648C);
 Color smallContainer = Colors.black;
+Color textColor = Color(0xFF325091);
