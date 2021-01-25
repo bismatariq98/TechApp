@@ -33,19 +33,19 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("APPS"),
+                      child: Text("Rendoz-vous"),
                     ),
                   ),
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("MOVIES"),
+                      child: Text("Infos Tech"),
                     ),
                   ),
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("GAMES"),
+                      child: Text("Documents"),
                     ),
                   ),
                 ]),
@@ -65,14 +65,10 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                 flex: 1,
                                 child: Container(
                                   child: Text(
-                                    "balels",
+                                    "Le",
                                     style: TextStyle(color: textColor),
                                   ),
                                 )),
-                            Icon(
-                              Icons.ac_unit_outlined,
-                              color: textColor,
-                            ),
                             Expanded(
                                 flex: 2,
                                 child: Padding(
@@ -88,9 +84,9 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                         )),
                                       )),
                                 )),
-                            Icon(
-                              Icons.ac_unit_outlined,
-                              color: textColor,
+                            Text(
+                              "a",
+                              style: TextStyle(fontSize: 25),
                             ),
                             Expanded(
                                 flex: 2,
@@ -120,7 +116,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                             Expanded(
                                 child: Container(
                               child: Text(
-                                "balels",
+                                "Adresse",
                                 style: TextStyle(color: textColor),
                               ),
                             )),
@@ -150,19 +146,19 @@ class _ThirdScreenState extends State<ThirdScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 10, left: 50.0),
+                        padding: const EdgeInsets.only(top: 10, left: 57.0),
                         child: Row(
                           children: [
+                            // Expanded(
+                            //     flex: 1,
+                            //     child: Container(
+                            //       child: Text(
+                            //         "Telephone",
+                            //         style: TextStyle(color: textColor),
+                            //       ),
+                            //     )),
                             Expanded(
                                 flex: 1,
-                                child: Container(
-                                  child: Text(
-                                    "balels",
-                                    style: TextStyle(color: textColor),
-                                  ),
-                                )),
-                            Expanded(
-                                flex: 2,
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 15.0),
                                   child: Container(
@@ -177,7 +173,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                       )),
                                 )),
                             Expanded(
-                                flex: 3,
+                                flex: 2,
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 15.0),
                                   child: Container(
@@ -199,36 +195,58 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       ),
                       container(
                         true,
-                      ),
-                      container(
+                        Icons.phone,
+                        "Telephone",
                         true,
                       ),
                       container(
                         true,
+                        Icons.phone,
+                        "Telephone",
+                        false,
                       ),
                       container(
                         true,
-                      ),
-                      container(
-                        false,
-                      ),
-                      containers(
-                        false,
-                      ),
-                      containers(
+                        Icons.phone,
+                        "Telephone",
                         false,
                       ),
                       container(
+                        true,
+                        Icons.mail,
+                        "Telephone",
                         false,
                       ),
-                      containersBig(
+                      container(
                         false,
+                        Icons.phone,
+                        "SIRET",
+                        true,
                       ),
-                      containers(
+                      containers(false, "Precision adresse"),
+                      containers(false, "Disponibilite"),
+                      container(
                         false,
+                        Icons.phone,
+                        "Intervention",
+                        true,
                       ),
-                      containersThree(),
+                      containersBig(false, "Commentaire(s)"),
+                      containers(false, "Pieces changees"),
+                      containersThree("Arrivee", "Depart", "Tps passe"),
                       containerLast(false),
+                      Container(
+                        color: Color(0xFF9DF060),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        child: Center(
+                            child: Text(
+                          "VALIDER CETTE INTERVENTION",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        )),
+                      ),
                     ],
                   ),
                 ),
@@ -241,21 +259,29 @@ class _ThirdScreenState extends State<ThirdScreen> {
               Container(
                 child: Column(
                   children: [
-                    SizedBox(height: 200),
-                    Row(
-                      children: [
-                        Expanded(
-                            child: Container(
-                          child: Text("balels"),
-                        )),
-                        Icon(Icons.ac_unit_outlined),
-                        Expanded(
-                            flex: 2,
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            child: Text("balels"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 80.0),
                             child: Container(
                               child: Text("Text Field"),
-                            ))
-                      ],
-                    )
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    container(
+                      false,
+                      Icons.phone,
+                      "Intervention",
+                      true,
+                    ),
                   ],
                 ),
               ),

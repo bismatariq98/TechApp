@@ -2,23 +2,23 @@ import 'package:techapp/Widget/Color.dart';
 import 'package:techapp/main.dart';
 import 'package:flutter/material.dart';
 
-Widget container(
-  bool yes,
-) {
+Widget container(bool yesIcon, IconData icon, String text, bool yesText) {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 50.0),
     child: Row(
       children: [
         Expanded(
             child: Container(
-          child: Text(
-            "balels",
-            style: TextStyle(color: textColor),
-          ),
+          child: yesText
+              ? Text(
+                  text,
+                  style: TextStyle(color: textColor),
+                )
+              : Container(),
         )),
-        yes
+        yesIcon
             ? Icon(
-                Icons.ac_unit_outlined,
+                icon,
                 color: textColor,
               )
             : Container(),
@@ -46,9 +46,7 @@ Widget container(
   );
 }
 
-Widget containers(
-  bool yes,
-) {
+Widget containers(bool yes, String text) {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 50.0),
     child: Row(
@@ -56,7 +54,7 @@ Widget containers(
         Expanded(
             child: Container(
           child: Text(
-            "balels",
+            text,
             style: TextStyle(color: textColor),
           ),
         )),
@@ -91,9 +89,7 @@ Widget containers(
   );
 }
 
-Widget containersBig(
-  bool yes,
-) {
+Widget containersBig(bool yes, String text) {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 50.0),
     child: Row(
@@ -101,7 +97,7 @@ Widget containersBig(
         Expanded(
             child: Container(
           child: Text(
-            "balels",
+            text,
             style: TextStyle(color: textColor),
           ),
         )),
@@ -136,7 +132,7 @@ Widget containersBig(
   );
 }
 
-Widget containersThree() {
+Widget containersThree(String textone, String texttwo, String textthree) {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 50.0),
     child: Row(
@@ -144,7 +140,7 @@ Widget containersThree() {
         Expanded(
             child: Container(
           child: Text(
-            "balels",
+            "Temps passe",
             style: TextStyle(color: textColor),
           ),
         )),
@@ -152,7 +148,7 @@ Widget containersThree() {
           children: [
             Column(
               children: [
-                Text("one"),
+                Text(textone),
                 Container(
                     width: 80,
                     child: TextFormField(
@@ -170,7 +166,7 @@ Widget containersThree() {
               padding: const EdgeInsets.only(left: 13.0),
               child: Column(
                 children: [
-                  Text("one"),
+                  Text(texttwo),
                   Container(
                       width: 80,
                       child: TextFormField(
@@ -189,7 +185,7 @@ Widget containersThree() {
               padding: const EdgeInsets.only(left: 13.0),
               child: Column(
                 children: [
-                  Text("one"),
+                  Text(textthree),
                   Container(
                       width: 60,
                       child: TextFormField(
@@ -218,14 +214,32 @@ Widget containerLast(
   bool yes,
 ) {
   return Padding(
-    padding: const EdgeInsets.only(top: 10, left: 50.0),
+    padding: const EdgeInsets.only(top: 10, left: 30.0),
     child: Row(
       children: [
         Expanded(
             child: Container(
-          child: Text(
-            "balels",
-            style: TextStyle(color: textColor),
+          child: Column(
+            children: [
+              Text(
+                "Montant recu",
+                style: TextStyle(color: textColor),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Mode Reglement",
+                style: TextStyle(color: textColor),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Reference/num.cheque",
+                style: TextStyle(color: textColor),
+              ),
+            ],
           ),
         )),
         Expanded(
