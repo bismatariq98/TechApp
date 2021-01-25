@@ -13,14 +13,28 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF378AC1),
       appBar: AppBar(
-        backgroundColor: appBarColorYellow,
+        backgroundColor: Color(0xFF28648C),
         leading: IconButton(icon: Icon(Icons.local_dining), onPressed: () {}),
         title: Text("Liste Interventions"),
         actions: [
-          IconButton(icon: Icon(Icons.crop_square), onPressed: () {}),
-          IconButton(icon: Icon(Icons.text_rotate_vertical), onPressed: () {}),
+          Container(
+            decoration: BoxDecoration(color: Colors.white),
+            width: 140,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  suffixIcon:
+                      IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(2),
+                    borderSide: new BorderSide(
+                      width: 2.0,
+                    ),
+                  )),
+            ),
+          ),
         ],
       ),
       body: Container(
@@ -47,7 +61,7 @@ class _SecondScreenState extends State<SecondScreen> {
                                 height: Get.height,
                                 width: 30,
                                 decoration: BoxDecoration(
-                                  color: Colors.black,
+                                  color: Color(0xFFFE9A00),
                                 ),
                                 child: RotatedBox(
                                     quarterTurns: 1,
@@ -114,10 +128,13 @@ class _SecondScreenState extends State<SecondScreen> {
                       );
                     }),
               ),
+              SizedBox(
+                height: Get.height / 2 - 305,
+              ),
               Container(
                 height: Get.height - 620,
                 width: Get.width,
-                decoration: BoxDecoration(color: appBarColorYellow),
+                decoration: BoxDecoration(color: Color(0xFF9A9A9A)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -128,18 +145,18 @@ class _SecondScreenState extends State<SecondScreen> {
                     Container(
                       height: Get.height,
                       width: Get.width / 2 - 100,
-                      color: smallContainer,
+                      color: Color(0xFF2AC422),
                       child: Column(
                         children: [
                           IconButton(
-                              icon: Icon(Icons.car_rental, color: Colors.white),
+                              icon: Icon(Icons.car_rental, color: Colors.black),
                               onPressed: null),
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsets.only(left: 20.0),
                               child: Text("Tournee Technician",
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   )),
                             ),
                           )
