@@ -2,6 +2,7 @@ import 'package:techapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:techapp/Widget/Color.dart';
 import 'package:techapp/Widget/oneTextField.dart';
+import 'package:get/get.dart';
 
 class ThirdScreen extends StatefulWidget {
   @override
@@ -257,52 +258,133 @@ class _ThirdScreenState extends State<ThirdScreen> {
 /* -------------------------------------------------------------------------- */
 
               Container(
-                child: Column(
-                  children: [
-                    SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            child: Text("balels"),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 80.0),
-                            child: Container(
-                              child: Text("Text Field"),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              child: Text("balels"),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(left: 80.0),
+                              child: Container(
+                                child: Text("Text Field"),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    container(
-                      false,
-                      Icons.phone,
-                      "Intervention",
-                      true,
-                    ),
-                  ],
+                      container(
+                        false,
+                        Icons.phone,
+                        "Type de chauffage",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Energie chaudiere",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Marques chaudieres",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Type chaidiere ",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Data de mise en service",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Numero de serie",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Puissance chaudiere",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Installateur chaudiere",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Type de bruleur ",
+                        true,
+                      ),
+                      containerCheckBox(
+                        false,
+                        Icons.phone,
+                        "Conduit devacuation",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Type de gainage",
+                        true,
+                      ),
+                      container(
+                        false,
+                        Icons.phone,
+                        "Diametre gainage",
+                        true,
+                      ),
+                      containerBig(
+                        false,
+                        Icons.phone,
+                        "Observations",
+                        true,
+                      ),
+                      Container(
+                        color: Color(0xFF9DF060),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        child: Center(
+                            child: Text(
+                          "VALIDER CETTE INTERVENTION",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        )),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                            child: Container(
-                          child: Text("balels"),
-                        )),
-                        Icon(Icons.ac_unit_outlined),
-                        Expanded(
-                            flex: 2,
-                            child: Container(
-                              child: Text("Text Field"),
-                            ))
-                      ],
-                    )
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      documents(),
+                      documentsOne(
+                          "Attestation d'entretien/Fiche d'intervention"),
+                      documentsOne("Certificat de ramonage"),
+                      documentsOne("Devis"),
+                      documentsOne("Facture"),
+                      documentsOne("Recu de reglement"),
+                    ],
+                  ),
                 ),
               ),
             ],
