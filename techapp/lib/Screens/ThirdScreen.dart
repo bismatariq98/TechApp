@@ -1,3 +1,6 @@
+import 'package:techapp/Controller/Form_controller.dart';
+import 'package:techapp/Screens/Reglement.dart';
+import 'package:techapp/Screens/form_design.dart';
 import 'package:techapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:techapp/Widget/Color.dart';
@@ -10,6 +13,8 @@ class ThirdScreen extends StatefulWidget {
 }
 
 class _ThirdScreenState extends State<ThirdScreen> {
+  FormController formController = Get.put(FormController());
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -372,21 +377,111 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   ),
                 ),
               ),
-              Container(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      documents(),
-                      documentsOne(
-                          "Attestation d'entretien/Fiche d'intervention"),
-                      documentsOne("Certificat de ramonage"),
-                      documentsOne("Devis"),
-                      documentsOne("Facture"),
-                      documentsOne("Recu de reglement"),
-                    ],
-                  ),
-                ),
-              ),
+
+/* -------------------------------------------------------------------------- */
+/*                                   3rd ONe                                  */
+/* -------------------------------------------------------------------------- */
+              formController.isFormOpen
+                  ? FormDesign()
+                  : Container(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            documents(),
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  formController.isFormOpen = true;
+                                });
+                              },
+                              child: documentsOne(
+                                  "Attestation d'entretien/Fiche d'intervention"),
+                            ),
+                            documentsOne("Certificat de ramonage"),
+                            documentsOne("Devis"),
+                            documentsOne("Facture"),
+                            InkWell(
+                                onTap: () {
+                                  Get.to(Reglement());
+                                },
+                                child: documentsOne("Recu de reglement")),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Container(
+                                      height: 300,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.white,
+                                        border: Border.all(color: Colors.blue),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 30,
+                                            width: 200,
+                                            decoration: BoxDecoration(
+                                              color: Color(0XFFDFE6F4),
+                                            ),
+                                            child: Center(
+                                              child: IconButton(
+                                                  icon: Icon(Icons.camera_alt),
+                                                  onPressed: () {}),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      height: 300,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.white,
+                                        border: Border.all(color: Colors.blue),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 30,
+                                            width: 200,
+                                            decoration: BoxDecoration(
+                                              color: Color(0XFFDFE6F4),
+                                            ),
+                                            child: Center(
+                                              child: IconButton(
+                                                  icon: Icon(Icons.camera_alt),
+                                                  onPressed: () {}),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Container(
+                              color: Color(0xFF9DF060),
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              child: Center(
+                                  child: Text(
+                                "VALIDER CETTE INTERVENTION",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              )),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
             ],
           )),
     );

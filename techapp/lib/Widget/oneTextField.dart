@@ -469,3 +469,64 @@ Widget documentsOne(String text) {
         )),
   );
 }
+
+Widget documentsThree(String text) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 10.0),
+    child: Container(
+        height: 50,
+        width: Get.width,
+        decoration: BoxDecoration(
+          color: Color(0xFFDFE6F4),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 7.0),
+          child: Row(
+            children: [
+              Text(
+                text,
+                style: TextStyle(color: Colors.blue, fontSize: 16),
+              ),
+              // SizedBox(
+              //   width: 160,
+              // ),
+              // IconButton(
+              //   icon: Icon(Icons.print_rounded),
+              //   onPressed: () {},
+              // ),
+              Padding(
+                padding: EdgeInsets.only(left: 120),
+                child: Container(
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.edit,
+                          color: Colors.blue,
+                        ),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.message,
+                          color: Colors.blue,
+                        ),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.edit,
+                          color: Colors.blue,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )),
+  );
+}

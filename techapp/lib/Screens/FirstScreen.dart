@@ -13,6 +13,7 @@ class _FirstSreenState extends State<FirstSreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF2758B9),
       body: Container(
         width: Get.width,
         child: Column(
@@ -25,7 +26,7 @@ class _FirstSreenState extends State<FirstSreen> {
                 height: Get.height - 400,
                 width: Get.width - 40,
                 decoration: BoxDecoration(
-                  color: Color(0xFF496076),
+                  color: Color(0xFF4C77D4),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -49,6 +50,11 @@ class _FirstSreenState extends State<FirstSreen> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
+                            child: Center(
+                              child: Text("Frederic",style: TextStyle(
+                                fontSize: 20,
+                                color: Color(0xFF4C77D4)),),
+                            ),
                           ),
                         ],
                       ),
@@ -56,19 +62,19 @@ class _FirstSreenState extends State<FirstSreen> {
                         height: Get.height - 630,
                         width: Get.width - 125,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Color(0xFF2BC423),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              icon: Icon(Icons.sanitizer),
+                              icon: Icon(Icons.sanitizer,color: Colors.white,),
                               onPressed: () {},
                             ),
                             Text(
                               "Liste de mes interventions",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 15),
+                                  TextStyle(color: Colors.white, fontSize: 15),
                             ),
                           ],
                         ),
@@ -77,19 +83,19 @@ class _FirstSreenState extends State<FirstSreen> {
                         height: Get.height - 630,
                         width: Get.width - 125,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Color(0xFF00AEEF),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              icon: Icon(Icons.sanitizer),
+                              icon: Icon(Icons.sanitizer,color: Colors.white,),
                               onPressed: () {},
                             ),
                             Text(
-                              "Liste de mes interventions",
+                              "Career une Intervention",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 15),
+                                  TextStyle(color: Colors.white, fontSize: 15),
                             ),
                           ],
                         ),
@@ -98,19 +104,19 @@ class _FirstSreenState extends State<FirstSreen> {
                         height: Get.height - 630,
                         width: Get.width - 125,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Color(0xFF28648C),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              icon: Icon(Icons.sanitizer),
+                              icon: Icon(Icons.sanitizer,color: Colors.white,),
                               onPressed: () {},
                             ),
                             Text(
-                              "Liste de mes interventions",
+                              "Consulter Ie catalouge prodult",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 15),
+                                  TextStyle(color: Colors.white, fontSize: 15),
                             ),
                           ],
                         ),
@@ -126,7 +132,7 @@ class _FirstSreenState extends State<FirstSreen> {
                 height: Get.height - 630,
                 width: Get.width - 125,
                 decoration: BoxDecoration(
-                  color: Color(0xFF496076),
+                  color: Color(0xFF4C77D4),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -138,38 +144,50 @@ class _FirstSreenState extends State<FirstSreen> {
                       ),
                       onPressed: () {},
                     ),
-                    Text(
-                      "Liste de mes interventions",
-                      style: TextStyle(color: Colors.black, fontSize: 15),
+                    Expanded(
+                                          child: Text(
+                        "Envoyer les interventions validees/Recevoir les Interventions",
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 140.0),
+              padding: const EdgeInsets.only(top: 145.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.access_alarm_outlined,
-                          color: Colors.blue,
-                        ),
-                        onPressed: () {},
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(
+                              Icons.access_alarm_outlined,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text("Fermer",style: TextStyle(fontSize: 20,color: Colors.white),)
+                        ],
                       ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.access_alarm_outlined,
-                          color: Colors.blue,
-                        ),
-                        onPressed: () {},
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(
+                              Icons.access_alarm_outlined,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+                           Text("Parametres",style: TextStyle(fontSize: 20,color: Colors.white,))
+                        ],
                       ),
                     ],
                   ),

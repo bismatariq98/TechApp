@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:techapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:techapp/Widget/Color.dart';
@@ -16,7 +18,7 @@ class _SecondScreenState extends State<SecondScreen> {
       backgroundColor: Color(0xFF378AC1),
       appBar: AppBar(
         backgroundColor: Color(0xFF28648C),
-        leading: IconButton(icon: Icon(Icons.local_dining), onPressed: () {}),
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: () {}),
         title: Text("Liste Interventions"),
         actions: [
           Container(
@@ -78,33 +80,56 @@ class _SecondScreenState extends State<SecondScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(secondlist[i].name),
-                                      Text(secondlist[i].title),
-                                      Text(secondlist[i].desc),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.person,
-                                          ),
-                                          Text("Fredreic"),
-                                        ],
-                                      )
-                                    ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 14.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          secondlist[i].name,
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        Text(
+                                          secondlist[i].title,
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        Text(
+                                          secondlist[i].desc,
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.person,
+                                              color: Colors.blue,
+                                            ),
+                                            Text(
+                                              "Fredreic",
+                                              style:
+                                                  TextStyle(color: Colors.blue),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 85.0),
+                                    padding: const EdgeInsets.only(left: 70.0),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(secondlist[i].time),
-                                        Text("09/00H"),
+                                        Text(
+                                          secondlist[i].time,
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        Text(
+                                          "09/00H",
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
                                         Row(
                                           children: [
                                             Text("Fredreic",
@@ -141,24 +166,28 @@ class _SecondScreenState extends State<SecondScreen> {
                     // SizedBox(
                     //   width: Get.width / 2 - 110,
                     // ),
-                    Text(secondlist[0].time),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 70.0),
+                      child: Text(
+                        "Voir les archives",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
                     Container(
                       height: Get.height,
-                      width: Get.width / 2 - 100,
+                      width: Get.width / 2 - 70,
                       color: Color(0xFF2AC422),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           IconButton(
-                              icon: Icon(Icons.car_rental, color: Colors.black),
+                              icon: Icon(Icons.car_repair, color: Colors.black),
                               onPressed: null),
                           Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              child: Text("Tournee Technician",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                  )),
-                            ),
+                            child: Text("Tournee Technician",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                )),
                           )
                         ],
                       ),
